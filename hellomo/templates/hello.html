@@ -1,0 +1,10 @@
+<html>
+<p>Hello!</p>
+<p>I see you are {{ request.session.identity.email }}.</p>
+{% if request.session.identity.is_staff %}
+ <p>You're Mozilla staff; You Go Mo!</p>
+{% else %}
+ <p>Sorry, you aren't Mozilla staff; No Go Mo :-(</p>
+{% endif %}
+<form action="/logout/" method="POST"><input type="submit" value="logout"></form>
+</html>
